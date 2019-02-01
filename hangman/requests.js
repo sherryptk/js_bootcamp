@@ -9,24 +9,29 @@ const getPuzzle = async (wordCount) => {
     }
 }
 
-const getCountryDetails = async (countryCode) => {
-    const response = await fetch('http://restcountries.eu/rest/v2/all')
+// const getCountryDetails = async (countryCode) => {
+//     const response = await fetch('http://restcountries.eu/rest/v2/all')
 
-    if (response.status === 200) {
-        const data = await response.json()
-        return data.find((country) => country.alpha2Code === countryCode)
-    } else {
-        throw new Error('Unable to fetch country')
-    }
-}
+//     if (response.status === 200) {
+//         const data = await response.json()
+//         return data.find((country) => country.alpha2Code === countryCode)
+//     } else {
+//         throw new Error('Unable to fetch country')
+//     }
+// }
 
-const getLocation = async () => {
-    const response = await fetch(`http://ipinfo.io/json?token=70ee3eadc9a228`)
+// const getLocation = async () => {
+//     const response = await fetch(`http://ipinfo.io/json?token=70ee3eadc9a228`)
 
-    if (response.status === 200) {
-        return response.json()
-    } else {
-        throw new Error('Unable to fetch location')
-    }
+//     if (response.status === 200) {
+//         return response.json()
+//     } else {
+//         throw new Error('Unable to fetch location')
+//     }
 
-}
+// }
+
+// const getCurrentCountry = async () => {
+//         const location = await getLocation()
+//         return getCountryDetails(location.country)
+// }

@@ -5,13 +5,21 @@ class Hangman {
         this.word = word.toLowerCase().split('')
         this.remainingGuesses = remainingGuesses
     }
+    
     get puzzle() {
-        let puzzle = '';
+        let puzzle = ''
+
         this.word.forEach((letter) => {
-            this.guessedLetters.includes(letter) || letter === '' ? puzzle += letter : puzzle += '*'
+            if (this.guessedLetters.includes(letter) || letter === ' ') {
+                puzzle += letter
+            } else {
+                puzzle += '*'
+            }
         })
+
         return puzzle
     }
+    
     makeGuess(guess) {
         guess = guess.toLowerCase()
         const isUnique = !this.guessedLetters.includes(guess);
