@@ -18,7 +18,6 @@ const getCountryDetails = async (countryCode) => {
     } else {
         throw new Error('Unable to fetch country')
     }
-
 }
 
 const getLocation = async () => {
